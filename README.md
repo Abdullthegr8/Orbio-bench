@@ -15,6 +15,34 @@ for social posts.
 | `/race` | Replay (or live) race of the models on one task |
 | `/card` | 1200x630 share card, also used as the Open Graph image |
 
+## Screenshots
+
+### Model status board (`/`)
+
+One square per task for each model (green passed, red failed, hatched errored and not counted), with pass rate, cost
+per pass and median time underneath. The banner at the top summarises the run, and the result card can be downloaded
+or posted on X.
+
+![Model status board with the summary banner and per-model task squares](img/model_status_page.png)
+
+Further down, models are ranked by cost per passing task.
+
+![Cost per passing task ranking, from DeepSeek V4 Pro at $0.0030 to Claude Fable 5.1 at $0.085](img/model_status_page_2.png)
+
+### Live race (`/race`)
+
+Pick a task and watch every model work on it at once. The bar fills as tests pass and the cost ticks up with every
+call. Replay mode plays back the recorded run; Live mode makes real calls and needs `RACE_TOKEN`.
+
+![Race page replaying the sliding-window rate limiter task across several models](img/live_race.png)
+
+### Model detail (`/model/[slug]`)
+
+Pass rate, cost per pass, total spend and median time for one model, followed by every run it made. Tap a run to see
+what the model did, call by call.
+
+![Gemini 3.8 Flash detail page listing every run with its result, cost and time](img/model_stats_after_race.png)
+
 ## Quick start (no API key needed)
 
 The repo ships with real benchmark results in `data/results.json`, so you can see the site without spending anything.
