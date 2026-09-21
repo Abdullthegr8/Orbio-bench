@@ -1,0 +1,32 @@
+# dependencies
+node_modules/
+
+# next.js build output
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# secrets: never commit a real key. .env.example is the only env file that ships.
+.env
+.env.*
+!.env.example
+
+# benchmark scratch files (data/results.json IS committed: the site reads it)
+data/*.tmp
+
+# logs
+*.log
+npm-debug.log*
+
+# deployment
+.vercel/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# local archives
+*.zip

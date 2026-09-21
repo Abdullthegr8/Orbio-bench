@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  background: #eef2f6;
+  scroll-padding-top: 4rem;
+}
+
+body {
+  @apply bg-fog font-body text-ink antialiased;
+}
+
+.num {
+  font-family: "Chakra Petch", ui-sans-serif, system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}
+
+:focus-visible {
+  outline: 2px solid #0f8b8d;
+  outline-offset: 2px;
+}
+
+/* Errored runs: hatched, so they never read as a plain fail. */
+.cell-error {
+  background: repeating-linear-gradient(45deg, #8e9bad 0 2px, #dce3eb 2px 5px);
+}
+
+/* Lane that is waiting on the model. */
+.lane-running {
+  background-image: repeating-linear-gradient(90deg, rgba(15, 139, 141, 0.28) 0 12px, rgba(15, 139, 141, 0.12) 12px 24px);
+  background-size: 24px 100%;
+  animation: lane-sweep 900ms linear infinite;
+}
+
+@keyframes lane-sweep {
+  to {
+    background-position: 24px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
