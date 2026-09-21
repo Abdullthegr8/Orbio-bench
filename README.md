@@ -119,4 +119,6 @@ Never set `ORBIO_API_KEY` on a public deployment unless you also set `RACE_TOKEN
   `runHarness` before enabling live races for the public.
 - Coding tasks accept a missing `module.exports` line and add it; the logic still has to be right.
 - Fonts load from Google Fonts at runtime. Self-host them with `next/font` if you need to avoid that request.
+- One recorded run errored: Claude Fable 5.1 on `eval-rpn` returned an empty completion from the gateway on every retry.
+  It is shown as an error and excluded from that model's pass rate.
 - Ten tasks is a small sample. Read the pass rates as a signal, not a leaderboard.
